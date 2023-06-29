@@ -72,29 +72,39 @@ from itertools import *
 # print(f"\no total de times possiveis será de: {count * count2 * count3}")
 
 #=====================================================================================================
-# 2.2 questao 13
-import math
-from itertools import combinations 
+# print("\n================ 2.2 Questao 13 ===================")
+#
+# # calculamos a quantidades de jogos possiveis, de 12 combinados 2 a 2 em 6 vezes, e dividimos pela permuatacao dos jogos de uma unica rodada 6!
+# from math import factorial
+# from itertools import combinations
+#
+# def combinacoes_jogos(times,partida = 2):
+#     times += 1
+#     quantidade_times = [x for x in range(1, times)]
+#     jogos = combinations(quantidade_times, partida)
+#     count = 0
+#     for x in jogos:
+#         print(list(x))
+#         count += 1
+#     print(f"possibilidades de jogos para C({times-1},{partida}): {count}")
+#     return count
+#
+# # a cada partida diminui 2 times, os quais foram selecionados na anterior
+#
+# partida1 = combinacoes_jogos(12)
+# partida2 = combinacoes_jogos(10)
+# partida3 = combinacoes_jogos(8)
+# partida4 = combinacoes_jogos(6)
+# partida5 = combinacoes_jogos(4)
+# partida6 = combinacoes_jogos(2)
+#
+# # todas combinacoes possiveis
+#
+# todas = partida1 * partida2 * partida3 * partida4 * partida5 * partida6
+# # dividindo pelas permutacoes dentro de cada partida
+#
+# total = int(todas/factorial(6))
+# print(f"Assim o total de jogos possiveis na primeira rodada, entre 12 times será de: {total}")
+#
 
-def calcular_combinacoes():
-    
-    num_combinacoes = (math.comb(12, 2) * math.comb(10, 2) * math.comb(8, 2) * math.comb(6, 2) * math.comb(4, 2) * math.comb(2, 2))
-    num_rodadas = math.factorial(6)
-    resultado = num_combinacoes // num_rodadas
-   
 
-times = [x for x in range(1,13)]
-
-jogo1 = combinations(times,2)
-count1 = 0
-for x in jogo1:
-  print(list(x))
-  count1 += 1
-print(f"possibilidades de jogos:{count1}")
-
-
-# Chamada da função para calcular o número de combinações corrigido
-resultado = calcular_combinacoes()
-
-# Exibição do resultado
-# print("Número de combinações corrigido:", resultado)
