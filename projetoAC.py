@@ -70,3 +70,31 @@ from itertools import *
 # print(count3)
 
 # print(f"\no total de times possiveis será de: {count * count2 * count3}")
+
+#=====================================================================================================
+# 2.2 questao 13
+import math
+from itertools import combinations 
+
+def calcular_combinacoes():
+    
+    num_combinacoes = (math.comb(12, 2) * math.comb(10, 2) * math.comb(8, 2) * math.comb(6, 2) * math.comb(4, 2) * math.comb(2, 2))
+    num_rodadas = math.factorial(6)
+    resultado = num_combinacoes // num_rodadas
+   
+
+times = [x for x in range(1,13)]
+
+jogo1 = combinations(times,2)
+count1 = 0
+for x in jogo1:
+  print(list(x))
+  count1 += 1
+print(f"possibilidades de jogos:{count1}")
+
+
+# Chamada da função para calcular o número de combinações corrigido
+resultado = calcular_combinacoes()
+
+# Exibição do resultado
+# print("Número de combinações corrigido:", resultado)
